@@ -20,6 +20,10 @@ The trained weights are included at:
 - `runs/detect/train2/weights/best.pt` — pothole model
 - `runs/detect/train3/weights/best.pt` — waste model
 
+## Streamlit Community Cloud
+
+Deploy `app.py` from the repository root and select **Python 3.12** in the deployment's advanced settings. The dependencies use headless OpenCV because the app does not open desktop windows. Streamlit Community Cloud does not let you change the Python version of an existing deployment; if it was created with Python 3.14, redeploy the app with Python 3.12 and the same repository, branch, and entry point.
+
 ## App pages
 
 - **Overview** — introduction and workflow.
