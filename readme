@@ -1,0 +1,30 @@
+# ROADGUARD AI
+
+An image-based road hazard review app built on the project's existing Python inference pipeline.
+
+## Run locally
+
+From this directory, create and activate a virtual environment, install the dependencies, then launch Streamlit:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
+
+The app expects the trained weights at:
+
+- `runs/detect/train2/weights/best.pt` — pothole detector
+- `runs/detect/train3/weights/best.pt` — waste detector
+
+If either file is missing, inference reports that the weights are unavailable. The app does not train or replace models.
+
+## Pages
+
+- **Overview** — project introduction and workflow.
+- **Road scanner** — image upload, YOLO detections, annotated image, illumination, confidence and risk breakdown.
+- **Analytics** — records and CSV export for analyses completed in the current Streamlit session.
+- **About project** — model and system overview, methodology and limitations.
+
+The risk score preserves the project's rule: 2 points per pothole, 1 per waste object, +5 for low light or +2 for medium light; scores above 10 are high risk and scores above 5 are medium risk. This heuristic is not a validated accident probability. Analytics are session-only; map reporting, persistent history, PDF reports and weather inputs are not operational.

@@ -1,0 +1,42 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# VS Code
+.vscode/
+
+# Environment
+.env
+
+# Training outputs
+runs/*
+!runs/detect/
+runs/detect/*
+!runs/detect/train2/
+!runs/detect/train3/
+runs/detect/train2/*
+runs/detect/train3/*
+!runs/detect/train2/weights/
+!runs/detect/train3/weights/
+runs/detect/train2/weights/*
+runs/detect/train3/weights/*
+!runs/detect/train2/weights/best.pt
+!runs/detect/train3/weights/best.pt
+
+# Redundant base checkpoint (the app uses the trained checkpoints above)
+/yolov8n.pt
+
+# Datasets
+dataset/
+garbage_dataset/
+Pothole Dataset/
+
+# Temporary files
+temp.jpg
+test.jpeg
